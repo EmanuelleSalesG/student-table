@@ -3,8 +3,8 @@ import {StudentCard} from '@/components/StudentCard'
 
 function Page(){
     return (
-      <div className='flex justify-center'>
-        <StudentCard/>
+      <div className='container mx-auto w-screen'>
+        <Table/>
         
       </div>
     );

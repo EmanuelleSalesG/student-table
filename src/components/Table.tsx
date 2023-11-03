@@ -1,22 +1,45 @@
+import {StudentCard} from '@/components/StudentCard'
+import {students} from '@/data/students'
+import {StudentStatus} from '@/components/StudentStatus'
+
+function showStudents(){
+    
+}
+
+
 export function Table(){
     return (
         <div>
-            <table className="p-5 bg-blue-600 w-screen">
-                <tr className="bg-green-400">
-                    <th className="p-3 bg-black">Name</th>
-                    <th>Status</th>
-                    <th>Grade 1</th>
-                    <th>Grade 2</th>
-                    <th>Final Grade</th>
+            <table className="text-left bg-blue-600  w-full">
+                <tr className="bg-white text-blue-900">
+                    <th className='text-center'>Name</th>
+                    <th className='hidden md:inline-block'>Status</th>
+                    <th className='text-center w-24'>Grade 1</th>
+                    <th className='text-center w-24'>Grade 2</th>
+                    <th className='text-center w-24'>Final Grade</th>
                 </tr>
-                <tr>
-                    <td className="p-5">Fulano</td>
-                    <td>Active</td>
-                    <td>7.3</td>
-                    <td>8.1</td>
-                    <td>7.7</td>
+                {
+                    students.map((student)=>
                     
-                </tr>
+                    <tr>
+                        <td><StudentCard
+                        name = {student.name}
+                        email = {student.email}
+                        avartar = {student.avatar}
+                        />
+                        
+                        </td>
+                        <td className='hidden md:inline'><StudentStatus
+                        status = {student.active}
+                        /></td>
+                        <td className='text-center border-2'>{student.grade1}</td>
+                        <td className='text-center border-2'>{student.grade2}</td>
+                        <td className='text-center border-2'>{
+                            (student.active) ? ((student.grade1 + student.grade2)/2.).toFixed(1) : '--'
+                        }</td>
+                    </tr> 
+                    )
+                }
             </table>
         </div>
     );
