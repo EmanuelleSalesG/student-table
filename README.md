@@ -17,9 +17,9 @@ Both the design and logic of the project were entirely created by me. This proje
 ### Folder Structure
 - `src`: Contains the `Page.tsx` file in the App folder, which is the main component of the application.
 - `components`: Includes the following reusable components:
-\t\t 1.`StudentCard.tsx`: Component to display a student's information.
-\t\t 2. `Table.tsx`: Component that renders the student table.
-\t\t 3. `StudentStatus.tsx` : Component to display the enrollment status of the student.
+- 1.`StudentCard.tsx`: Component to display a student's information.
+- 2. `Table.tsx`: Component that renders the student table.
+- 3. `StudentStatus.tsx` : Component to display the enrollment status of the student.
 - `data`: Inside this folder is the `Students.ts` file, which contains an array of objects used for the table data.
 
 ### Contributions
